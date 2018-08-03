@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='系统设置',active='settings'">
+<script th:src="@{/lib/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/plugins/dzh.js}"></script>
+
+<link th:href="@{/css/manager/list.css}" rel="stylesheet"/>
+<script th:src="@{/js/manager/list.js}"></script>
+
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-sm-12 column">
+            <h1 class="page-header">管理<br/><small>es db 数据扫描比较&nbsp;&nbsp;&nbsp;&nbsp;
+                上次扫描时间:&nbsp;&nbsp;<span id="scan_time"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                上次比对时间:&nbsp;&nbsp;<span id="compare_time"></span></small></h1>
+        </div>
+
+        <form role="form" style="margin-top: 2%;">
+            <div class="col-sm-2">
+                <label class="control-label col-sm-12">环境</label>
+                <div class="col-sm-12">
+                    <select name="environment" id="env" class="form-control">
+                        <option value="TEST">内网</option>
+                        <option value="UAT">UAT</option>
+                        <option value="PROSH">正式(上海)</option>
+                        <option value="PROBJ">正式(北京)</option>
+                        <option value="PRO_HUAWEI_CLOUD">正式(华为云)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label>index</label>
+                <input type="text" class="form-control" id="index"/>
+            </div>
+
+            <div class="col-sm-2">
+                <label class="control-label col-sm-12">预计同步量</label>
+                <div class="col-sm-12">
+                    <select name="syncCount" id="syncCount" class="form-control" data-bind="form_order_receipt_ds">
+                        <option value="">全部</option>
+                        <option value="1">>0</option>
+                        <option value="10001">>10,000</option>
+                        <option value="1000001">>1,000,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <label class="control-label col-sm-12">扫描结果</label>
+                <div class="col-sm-12">
+                    <select name="scanResult" id="scanResult" class="form-control" data-bind="form_order_receipt_ds">
+                        <option value="">全部</option>
+                        <option value="true">成功</option>
+                        <option value="false">失败</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-2" style="text-align: right;margin-top: 2%">
+                <button type="reset" class="btn btn-white" onclick="clearTable()" style="margin-right: 1%">清空</button>
+                <button type="button" class="btn btn-white" onclick="queryData()">查询</button>
+            </div>
+        </form>
+
+        <div class="col-sm-12 column" style="margin-top: 2%">
+            <table id="table"
+                   data-unique-id="id"
+                   data-toggle="table"
+                   data-checkbox="true"
+                   data-url="/app/manager/list"
+                   data-side-pagination="server"
+                   data-query-params="queryParams"
+                   data-response-handler="getServiceData"
+                   data-locale="zh-CN"
+                   data-page-size="25"
+                   data-pagination="true">
+                <thead>
+                <tr>
+                    <th data-field="index" data-align="center" data-halign="center" data-sortable="true">索引</th>
+                    <th data-field="ip" data-align="center" data-halign="center" data-sortable="true"><span>ip</span></th>
+                    <th data-field="dbName" data-align="center" data-halign="center" data-sortable="true"><span>数据库名称</span></th>
+                    <th data-field="table" data-align="center" data-halign="center" data-sortable="true"><span>表名</span></th>
+                    <th data-field="esCount" data-align="center" data-halign="center" data-sortable="true"><span>es总数</span></th>
+                    <th data-field="dbCount" data-align="center" data-halign="center" data-sortable="true"><span>db总数</span></th>
+                    <th data-field="countAbs" data-formatter="numCommonFormat" data-align="center" data-halign="center" data-sortable="true"><span>差值</span></th>
+                    <th data-field="scanResult" data-formatter="scanResultFormat" data-align="center" data-halign="center" data-sortable="true"><span>扫描结果</span></th>
+                    <!--<th data-field="scanCompareTime" data-formatter="formatTableDate2" data-align="center" data-halign="center">比对时间</th>-->
+                    <th data-field="syncCount" data-formatter="numCommonFormat" data-align="center" data-halign="center" data-sortable="true">预计同步量</th>
+                    <th data-field="row" data-formatter="nameFormatter" data-align="center" data-halign="center" data-events="inputEvents">操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

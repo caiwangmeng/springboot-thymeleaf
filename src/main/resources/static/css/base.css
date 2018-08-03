@@ -1,0 +1,435 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.mask-container{
+    height: 100%;
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+    background: #000;
+    opacity: 0.03;
+    top: 0px;
+    left: 0px;
+}
+.main-layout{
+    width: 90%;
+    min-width: 900px;
+    max-width: 1400px;
+    overflow-x: hidden;
+    margin: auto;
+}
+.main-container{
+    padding-bottom: 30px;
+}
+i[class^="fa-"] {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*
+ * 上传图片
+ */
+.yk-upload-img[readonly="true"] .yk-upload-btn{
+    display: none;
+}
+.img-td .img-view-o-con {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin: auto;
+    border: 1px solid #E7E7E7;
+}
+.img-view-list{
+    margin: 0px;
+    display: inline;
+    padding: 0px;
+}
+.img-view-item{
+    height: 120px;
+    width: 120px;
+    box-sizing: content-box;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+.img-view-o-con{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.img-view-o{
+    height: 100%;
+    cursor: pointer;
+}
+.close-con{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #eee;
+    cursor: pointer;
+}
+.img-view-item .close-con:hover{
+    color: #999;
+}
+.yk-upload-btn .u-line{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    background-color: #ccc;
+    border-radius: 2px;
+}
+.yk-upload-btn .u-line:hover{
+    background-color: #999;
+}
+.yk-upload-btn .line-h{
+    width: 50px;
+    height: 5px;
+    margin-left: -25px;
+    margin-top: -3px;
+}
+.yk-upload-btn .line-v{
+    height: 50px;
+    width: 5px;
+    margin-top: -25px;
+    margin-left: -3px;
+}
+.yk-date-picker + .add-on{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    height: 100%;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: -15px;
+}
+.dt-between{
+    text-align: center;
+    line-height: 30px;
+    color: #999;
+}
+
+.yk-upload-btn, .yk-upload-btn:active{
+    font-size: 30px;
+    border: 1px dashed #ccc;
+    background: transparent;
+    height: 160px;
+    width: 160px;
+    text-align: center;
+    line-height: 160px;
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.yk-upload-btn .webuploader-pick, .yk-upload-btn .webuploader-pick-hover{
+    background: transparent !important;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: inherit;
+    padding: 0px;
+    margin: 0px;
+    color: #ccc;
+}
+.yk-upload-btn .webuploader-pick + div{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    bottom: auto;
+    right: auto;
+    background-color: transparent;
+}
+.btn-upload .webuploader-pick{
+    height: 34px;
+    line-height: 14px;
+    color: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-right: 16px;
+}
+.form-horizontal:after, .clear-fix:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0;
+    zoom: 1;
+}
+.form-horizontal .form-group{
+    margin-top: 10px;
+    min-height: 80px;
+}
+.form-horizontal .form-group + .form-group{
+    padding-left: 40px !important;
+    box-sizing: border-box;
+}
+.form-horizontal .form-group + .next-line{
+    padding-left: 0px !important;
+}
+.form-group .control-label{
+    text-align: left !important;
+    margin-bottom: 4px !important;
+}
+.form-group .form-control, td .bootstrap-grid-edit{
+    border-radius: 1px;
+    border: 1px solid #000;
+}
+td .bootstrap-grid-edit{
+    border-color: #ccc;
+    background-color: #fefefe;
+}
+.form-group .form-control:disabled{
+    border-color: #ccc;
+    background-color: #fafafa;
+}
+
+.form-horizontal .form-group{margin: 0px !important;}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding: 0px !important;
+}
+.disabled-text{
+    color: #ccc;
+    font-weight: normal;
+}
+.part-header{
+    margin-top: 30px;
+    line-height: 40px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #999;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+.part-header .icon-con{
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn{
+    min-width: 90px;
+    min-height: 34px;
+    border-radius: 2px !important;
+    background-image: none !important;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color, width, height, left, top, right, bottom, opacity;
+    transition-property: color, background-color, width, height, left, top, right, bottom, opacity;
+}
+.btn + .btn{
+    margin-left: 16px;
+}
+.editable-buttons .btn{
+    min-width: 40px;
+    height: 30px;
+    min-height: 30px;
+    margin-right: 2px;
+}
+.btn-primary{
+    background-color: #111 !important;
+}
+.btn-primary:hover, .btn-primary:active {
+    background-color: #333 !important;
+}
+body .btn-default {
+    text-shadow: none;
+    border-color: #999;
+    background-color: #999;
+    color: #fff;
+}
+body .btn-default:hover{
+    color: #fff;
+    background-color: #aaa;
+    border-color: #aaa;
+}
+.ds-error, .ds-error .yk-upload-btn, .ds-error .yk-upload-btn:active{
+    border-color: #c00 !important;
+}
+
+.yk-msg-contianer{
+    min-width: 320px !important;
+    min-height: 160px;
+}
+.yk-msg-contianer .icon-con{
+    font-size: 16px;
+    margin-right: 6px;
+}
+.yk-msg-contianer .layui-layer-content {
+    padding-top: 6px;
+    min-height: 60px;
+}
+.yk-msg-few .layui-layer-content{
+    text-align: center;
+}
+.yk-msg-contianer .layui-layer-content {
+    padding-top: 6px !important;
+    min-height: 60px;
+}
+.yk-msg-contianer .layui-layer-btn{
+    text-align: center;
+}
+.yk-msg-contianer .layui-layer-title{
+    padding: 0 80px 0 20px;
+    height: 42px;
+    line-height: 40px;
+    border-bottom: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    overflow: hidden;
+    background: none;
+    border-radius: 2px 2px 0 0;
+}
+.yk-msg-contianer .layui-layer-btn .layui-layer-btn0 {
+    border-color: #000;
+    background-color: #000;
+    color: #fff;
+}
+.yk-msg-contianer .layui-layer-btn .layui-layer-btn0:hover{
+    border-color: #333;
+    background-color: #333;
+}
+table td, .fixed-table-container tbody tr:first-child td{
+    vertical-align: middle;
+}
+
+.editable-empty, .editable-empty:hover, .editable-empty:focus{
+    font-style: italic;
+    color: #DD1144;
+    text-decoration: none;
+}
+body a {
+    color: #4A90E2;
+    text-decoration: none;
+}
+.editable-click, a.editable-click, a.editable-click:hover {
+    color: #666;
+    text-decoration: none;
+    border-color: #4A90E2 !important;
+    line-height: 30px;
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.form-horizontal .form-btns{
+    text-align: right;
+    min-height: 60px;
+}
+.bootstrap-table{
+    margin-top: 15px;
+}
+.bootstrap-table .table, .bootstrap-table .table>tbody>tr>td, .bootstrap-table .table>tbody>tr>th, .bootstrap-table .table>tfoot>tr>td, .bootstrap-table .table>tfoot>tr>th, .bootstrap-table .table>thead>tr>td {
+    padding: 4px 8px!important;
+    vertical-align: middle;
+}
+a:focus, a:hover{
+    text-decoration: none !important;
+}
+a{
+    cursor: pointer;
+}
+.bootstrap-table .pagination>li>a, .bootstrap-table .pagination>li>span {
+    color: #999;
+}
+.bootstrap-table .pagination>li>a:hover, .bootstrap-table .pagination>li>span:hover, .bootstrap-table .pagination>li>a:focus, .bootstrap-table .pagination>li>span:focus {
+    color: #666;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.bootstrap-table .pagination>.active>a, .bootstrap-table .pagination>.active>span, .bootstrap-table .pagination>.active>a:hover, .bootstrap-table .pagination>.active>span:hover, .bootstrap-table .pagination>.active>a:focus, .bootstrap-table .pagination>.active>span:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #333;
+    border-color: #333;
+}
+.bootstrap-table .pagination-detail .dropdown-toggle {
+    box-sizing: content-box;
+    padding: 2px 6px;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: transparent;
+    color: #333;
+    border-color: #000;
+}
+
+.bootstrap-table .pagination{
+    color: #999;
+}
+.dropdown-menu{
+    padding: 0px !important;
+}
+.dropdown-menu li{
+    padding: 4px 0;
+}
+.dropdown-menu .active, .dropdown-menu .active a{
+    background: #333 !important;
+}
+.datePicker-dom .add-on{
+    position: absolute;
+    line-height: 34px;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    text-align: center;
+}
+.select-dom .add-on{
+    position: absolute;
+    line-height: 28px;
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    text-align: center;
+}
+.select-option-list{
+    text-indent: 4px;
+    line-height: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.select-option-list .yaok-select-item:hover, .select-option-list .yk-select-focus{
+    background-color: #eee;
+    cursor: pointer;
+}
+.select-option-list .yk-selected{
+    background-color: #333 !important;
+    color: #fff !important;
+}
+.yk-bootstrap-grid input[type=radio], .yk-bootstrap-grid input[type=checkbox] {
+    display: inline;
+    border: none;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
